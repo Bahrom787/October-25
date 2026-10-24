@@ -1,166 +1,149 @@
-const translations = {
-    ru: {
-        pageTitle: "С Днём рождения, Папа",
-        languageLabel: "Выбор языка",
-        greeting: "С Днём рождения",
-        name: "Папа",
-        tagline: "Человеку, чья сила, мудрость и достоинство закалены годами испытаний",
-        introTitle: "Уважаемый папа",
-        introFirst: "Пятьдесят один год — это огромная цифра, показывающая, сколько всего вы пережили, каких высот достигли и сколько мудрости накопили. В этот день я хочу поздравить вас с днём рождения и выразить благодарность за всё, что вы сделали для нашей семьи.",
-        introSecond: "Вы — человек, который знает цену тишине не потому, что вам нечего сказать, а потому, что вы понимаете: настоящие слова приходят после долгих раздумий. Ваше спокойствие — это не слабость, а мудрость человека, который многое повидал и научился ценить то, что действительно важно.",
-        qualitiesTitle: "Ваши качества, которыми я восхищаюсь",
-        qualityOneTitle: "Стойкость",
-        qualityOneText: "Жизнь не всегда была к вам щедра, но вы не сломались. Вы научились принимать удары и продолжать идти вперёд. Это качество передаётся тем, кто рядом с вами.",
-        qualityTwoTitle: "Достоинство",
-        qualityTwoText: "Даже в самые трудные времена вы сохраняли своё достоинство. Вы не искали лёгких путей и не жаловались на судьбу — вы просто делали то, что нужно было сделать.",
-        qualityThreeTitle: "Мудрость",
-        qualityThreeText: "Ваша мудрость — это не книги, а опыт. Каждый год жизни добавлял вам понимания того, как устроен мир, и вы делитесь этим пониманием с теми, кого любите.",
-        qualityFourTitle: "Надёжность",
-        qualityFourText: "На вас можно положиться. Вы — тот, кто не подведёт и будет рядом, когда это действительно нужно. Ваша надёжность — фундамент, на котором держится семья.",
-        aboutTitle: "О вас",
-        aboutFirst: "Вы интересуетесь автомобилями — и это не случайно. Машины — это механизмы, которые требуют понимания, терпения и уважения к инженерной мысли. Вы цените вещи, сделанные качественно и надолго, и сами стремитесь быть таким же.",
-        aboutSecond: "Вы любите тишину — и это не уход от мира. Это способность побыть наедине с собой, подумать, всё обдумать и найти ответы внутри. В мире, где все кричат, вы выбрали спокойствие, и это делает вас сильнее.",
-        quoteText: "«Настоящая сила человека измеряется не тем, сколько раз он упал, а тем, сколько раз он встал и продолжил идти. Вы — пример того, как можно пройти через трудности и сохранить достоинство.»",
-        quoteAuthor: "— С глубоким уважением",
-        gratitudeTitle: "Благодарность",
-        gratitudeFirst: "Дорогой папа, я хочу выразить вам своё глубокое уважение и благодарность. Вы прошли через многое, и каждый ваш шаг стал для меня уроком.",
-        gratitudeSecond: "Спасибо за то, что вы есть. За вашу стойкость, которая учит меня не сдаваться. За ваше достоинство, которое показывает, как держать голову высоко даже в трудные времена. За вашу мудрость, которой вы делитесь не словами, а своим примером.",
-        gratitudeThird: "Вы — человек, которого я уважаю и которым горжусь. Пусть этот новый год жизни принесёт вам спокойствие и удовлетворение, которых вы заслуживаете.",
-        signature: "С уважением и благодарностью,",
-        sonName: "Ваш сын Бахром",
-        footerMessage: "Сделано с глубоким уважением от всей семьи",
-        footerDate: "Октябрь 2026"
-    },
-    en: {
-        pageTitle: "Happy Birthday, Dad",
-        languageLabel: "Choose language",
-        greeting: "Happy Birthday",
-        name: "Dad",
-        tagline: "To a man whose strength, wisdom, and dignity were forged through years of challenges",
-        introTitle: "Dear Dad",
-        introFirst: "Fifty-one is a remarkable milestone. It represents everything you have lived through, the heights you have reached, and the wisdom you have gained. Today, I want to wish you a happy birthday and thank you for everything you have done for our family.",
-        introSecond: "You understand the value of silence—not because you have nothing to say, but because you know that meaningful words come after reflection. Your calm is not a weakness; it is the wisdom of someone who has seen much and learned to value what truly matters.",
-        qualitiesTitle: "The qualities I admire in you",
-        qualityOneTitle: "Resilience",
-        qualityOneText: "Life has not always been generous to you, but you have never given up. You have learned to face hardship and keep moving forward. That strength inspires everyone around you.",
-        qualityTwoTitle: "Dignity",
-        qualityTwoText: "Even in the hardest times, you have held on to your dignity. You never looked for the easy way out or complained about fate—you simply did what needed to be done.",
-        qualityThreeTitle: "Wisdom",
-        qualityThreeText: "Your wisdom comes not from books, but from experience. Every year has deepened your understanding of the world, and you share that understanding with the people you love.",
-        qualityFourTitle: "Reliability",
-        qualityFourText: "We can always count on you. You are someone who keeps their word and is there when it truly matters. Your reliability is one of the foundations of our family.",
-        aboutTitle: "A little about you",
-        aboutFirst: "Your interest in cars is no coincidence. They are machines that call for understanding, patience, and respect for engineering. You value things that are well made and built to last—and you strive to live by the same principle.",
-        aboutSecond: "You cherish quiet—not as an escape from the world, but as a chance to think, reflect, and find answers within. In a world where everyone is shouting, you have chosen calm, and that makes you stronger.",
-        quoteText: "“A person's true strength is measured not by how many times they fall, but by how many times they get back up and carry on. You show us how to face hardship and keep our dignity.”",
-        quoteAuthor: "— With deepest respect",
-        gratitudeTitle: "With gratitude",
-        gratitudeFirst: "Dear Dad, I want to express my deep respect and gratitude. You have been through so much, and every step you have taken has taught me something.",
-        gratitudeSecond: "Thank you for being there. Your resilience teaches me not to give up. Your dignity shows me how to hold my head high in difficult times. You share your wisdom not just through words, but through the example you set.",
-        gratitudeThird: "You are someone I deeply respect and am proud of. May this new year of your life bring you the peace and contentment you deserve.",
-        signature: "With respect and gratitude,",
-        sonName: "Your son, Bakhrom",
-        footerMessage: "Made with deep respect by the whole family",
-        footerDate: "October 2026"
-    },
-    uz: {
-        pageTitle: "Tug‘ilgan kuningiz muborak, dada",
-        languageLabel: "Tilni tanlang",
-        greeting: "Tug‘ilgan kuningiz muborak",
-        name: "Dada",
-        tagline: "Kuch-qudrati, donoligi va qadr-qimmati sinovlar davomida toblangan insonga",
-        introTitle: "Aziz dadajon",
-        introFirst: "Ellik bir yosh — bu katta va qadrli marradir. Bu siz boshdan kechirgan voqealar, erishgan yutuqlar va to‘plagan donoligingizni anglatadi. Bugun sizni tug‘ilgan kuningiz bilan tabriklab, oilamiz uchun qilgan barcha ishlaringizga minnatdorlik bildirmoqchiman.",
-        introSecond: "Siz sukutning qadrini bilasiz — aytadigan gapingiz yo‘qligi uchun emas, balki chin so‘zlar chuqur o‘ydan so‘ng kelishini tushunganingiz uchun. Bosiqligingiz zaiflik emas, ko‘pni ko‘rgan va hayotdagi muhim narsalarni qadrlashni o‘rgangan insonning donoligidir.",
-        qualitiesTitle: "Sizdagi men havas qiladigan fazilatlar",
-        qualityOneTitle: "Matonat",
-        qualityOneText: "Hayot sizga har doim ham yengil bo‘lmagan, ammo siz hech qachon taslim bo‘lmagansiz. Qiyinchiliklarga dosh berib, olg‘a yurishni o‘rgandingiz. Bu matonat yoningizdagilarga ham kuch beradi.",
-        qualityTwoTitle: "Qadr-qimmat",
-        qualityTwoText: "Eng qiyin paytlarda ham qadr-qimmatingizni saqlab qoldingiz. Oson yo‘l izlamadingiz va taqdirga nolimadingiz — shunchaki bajarilishi kerak bo‘lgan ishni qildingiz.",
-        qualityThreeTitle: "Donolik",
-        qualityThreeText: "Donoligingiz kitoblardan emas, hayotiy tajribadan keladi. Har bir yil dunyoni chuqurroq anglashga yordam berdi, bu tushunchalaringizni esa sevgan insonlaringiz bilan bo‘lishasiz.",
-        qualityFourTitle: "Ishonchlilik",
-        qualityFourText: "Sizga doimo ishonish mumkin. Kerakli paytda yonimizda bo‘lib, hech qachon pand bermaysiz. Ishonchliligingiz oilamiz tayanchlaridan biridir.",
-        aboutTitle: "Siz haqingizda",
-        aboutFirst: "Avtomobillarga qiziqishingiz bejiz emas. Ular tushunish, sabr va muhandislik mahoratiga hurmat talab qiladigan mexanizmlardir. Siz sifatli va uzoq xizmat qiladigan narsalarni qadrlaysiz va o‘zingiz ham shunday bo‘lishga intilasiz.",
-        aboutSecond: "Siz sukunatni yaxshi ko‘rasiz — bu dunyodan qochish emas. Bu o‘zingiz bilan yolg‘iz qolib, fikr yuritish va javoblarni qalbingizdan topish imkonidir. Hamma baland ovozda gapiradigan dunyoda siz bosiqlikni tanladingiz, bu esa sizni yanada kuchli qiladi.",
-        quoteText: "“Insonning haqiqiy kuchi necha marta yiqilgani bilan emas, necha marta turib, yo‘lida davom etgani bilan o‘lchanadi. Siz qiyinchiliklarni yengib, qadr-qimmatni saqlab qolish mumkinligini ko‘rsatasiz.”",
-        quoteAuthor: "— Chuqur hurmat bilan",
-        gratitudeTitle: "Minnatdorlik",
-        gratitudeFirst: "Aziz dadajon, sizga bo‘lgan chuqur hurmatim va minnatdorligimni bildirmoqchiman. Siz ko‘p sinovlardan o‘tdingiz va har bir qadamingiz men uchun saboq bo‘ldi.",
-        gratitudeSecond: "Borligingiz uchun rahmat. Taslim bo‘lmaslikni o‘rgatadigan matonatingiz uchun rahmat. Qiyin paytlarda ham boshni baland tutishni ko‘rsatadigan qadr-qimmatingiz uchun rahmat. Donoligingizni so‘z bilan emas, ibratingiz bilan ulashasiz.",
-        gratitudeThird: "Siz hurmat qiladigan va faxrlanadigan insonimsiz. Hayotingizning yangi yili sizga munosib xotirjamlik va mamnuniyat olib kelsin.",
-        signature: "Hurmat va minnatdorlik bilan,",
-        sonName: "O‘g‘lingiz Bahrom",
-        footerMessage: "Butun oilamiz nomidan chuqur hurmat bilan tayyorlandi",
-        footerDate: "2026-yil, oktabr"
-    }
+const greetings = {
+    37: [
+        "Сегодня вам 37 — прекрасный возраст, когда впереди ещё столько дорог, открытий и счастливых встреч. Я очень ценю вашу доброту, силу и то, как вы умеете быть рядом.",
+        "Желаю вам крепкого здоровья, уверенности в каждом решении и побольше поводов гордиться собой. Пусть рядом всегда будут любимые люди, а дома ждут тепло и уют.",
+        "С днём рождения, папа! Пусть новый год жизни принесёт радость, удачу и исполнение самых заветных желаний. Очень вас люблю!"
+    ],
+    38: [
+        "Вам сегодня 38, и я хочу пожелать, чтобы каждый день приносил что-то хорошее: добрые новости, приятные встречи и маленькие поводы для улыбки.",
+        "Спасибо за вашу заботу и за то, что на вас всегда можно положиться. Желаю вам сил для больших планов, спокойствия в душе и здоровья на долгие годы.",
+        "Пусть всё, к чему вы стремитесь, получается, а рядом всегда будут те, кто любит и ценит вас. С днём рождения, папа!"
+    ],
+    39: [
+        "С 39-летием, папа! Вы умеете поддержать одним словом и сделать обычный день особенным. Я благодарен за ваше большое сердце и за всё, чему вы меня учите.",
+        "Пусть в жизни будет больше радостных событий, удачных начинаний и времени на то, что приносит вам удовольствие. Желаю крепкого здоровья и душевного равновесия.",
+        "Пусть любовь близких согревает вас каждый день, а все добрые мечты постепенно становятся реальностью. С праздником!"
+    ],
+    40: [
+        "С прекрасным 40-летием! Это важная и красивая дата, а для меня вы всё тот же самый родной папа, на которого хочется равняться.",
+        "Желаю вам бодрости, крепкого здоровья, уверенности и вдохновения. Пусть впереди ждут новые возможности, интересные дела и заслуженный отдых.",
+        "Пусть в доме всегда звучит смех, в сердце живёт спокойствие, а рядом будут верные и любящие люди. С днём рождения, папа!"
+    ],
+    41: [
+        "Сегодня вам 41, папа! Пусть этот год будет щедрым на хорошие новости, тёплые встречи и поводы сказать: «Как же хорошо, что всё сложилось именно так».",
+        "Желаю, чтобы здоровье не подводило, силы не иссякали, а любые трудности решались легко и вовремя. Вы заслуживаете самого доброго.",
+        "Спасибо, что всегда поддерживаешь меня и радуешься моим успехам. Я горжусь вами и желаю вам большого счастья!"
+    ],
+    42: [
+        "С днём рождения, папа! В ваши 42 пусть каждый новый день приносит спокойствие, ясные мысли и уверенность в том, что всё важное обязательно получится.",
+        "Желаю здоровья, бодрости и побольше времени для любимых занятий. Пусть работа радует результатами, а дома всегда ждут забота и уют.",
+        "Оставайся таким же надёжным, добрым и сильным. Пусть жизнь отвечает тебе теплом на всё добро, которым ты делишься с близкими."
+    ],
+    43: [
+        "Вам 43 — и это ещё один повод сказать, как сильно я вас люблю и уважаю. Твоя поддержка для меня бесценна, а твой пример помогает идти вперёд.",
+        "Пусть в новом году жизни будет больше лёгких дней, хороших путешествий и радостных событий. Желаю крепкого здоровья и исполнения желаний.",
+        "Пусть удача сопровождает вас во всех делах, а любовь семьи наполняет сердце теплом. С праздником, мой дорогой папа!"
+    ],
+    44: [
+        "Поздравляю вас с 44-летием! Спасибо за вашу мудрость, заботу и за то, что рядом с вами всегда чувствуете себя увереннее.",
+        "Желаю вам крепкого здоровья, благополучия и сил на всё задуманное. Пусть каждый день дарит хотя бы одну причину улыбнуться.",
+        "Пусть сбываются даже те мечты, о которых вы пока никому не рассказывали. Будьте счастливы, любимы и окружены заботой!"
+    ],
+    45: [
+        "С юбилейным 45-летием, папа! Половина пути к столетию — отличный повод порадоваться всему, чего вы достигли, и с интересом смотреть на новые планы.",
+        "Желаю вам здоровья, семейного тепла и уверенности в завтрашнем дне. Пусть сил хватает на большие цели, а в расписании всегда находится место для отдыха.",
+        "Я очень горжусь вами и благодарен за всё, что вы для меня делаешь. Пусть впереди будет много счастливых лет!"
+    ],
+    46: [
+        "С днём рождения, папа! В ваши 46 желаю, чтобы каждый год приносил новые радости, а рядом всегда были люди, с которыми можно разделить и успех, и простой хороший вечер.",
+        "Пусть здоровье будет крепким, настроение — светлым, а все дела складываются удачно. Желаю вам побольше спокойных дней и приятных сюрпризов.",
+        "Спасибо, что учишь меня быть честным, ответственным и заботливым. Пусть добро, которое вы отдаёте, возвращается к вам сторицей!"
+    ],
+    47: [
+        "Тебе сегодня 47! Желаю, чтобы в жизни было больше поводов для гордости, меньше тревог и как можно больше моментов, которые хочется запомнить.",
+        "Пусть хватает здоровья и энергии на всё, что вам дорого. Пусть ваши решения приносят хорошие результаты, а близкие всегда поддерживают.",
+        "Ты замечательный папа и важнейший человек в моей жизни. Желаю вам счастья, любви и исполнения желаний!"
+    ],
+    48: [
+        "С 48-летием, папа! Пусть этот день напомнит вам, как много людей вас любят и ценят, а новый год жизни подарит ещё больше поводов для радости.",
+        "Желаю крепкого здоровья, душевного покоя и успеха во всех начинаниях. Пусть дома всегда будет уютно, а на сердце — тепло.",
+        "Пусть каждый день приносит что-то доброе, а рядом остаются самые близкие. Спасибо, что вы у меня есть!"
+    ],
+    49: [
+        "Сегодня вам 49, и я хочу пожелать вам не только праздничного настроения, но и множества счастливых дней впереди.",
+        "Пусть здоровье будет надёжным, планы осуществляются, а любые заботы уступают место спокойствию и уверенности. Желаю вам побольше времени на себя и любимых.",
+        "Спасибо за ваше терпение, поддержку и любовь. Я горжусь вами и желаю, чтобы жизнь радовала вас каждый день!"
+    ],
+    50: [
+        "Папа, с прекрасным 50-летием! За плечами у вас целая жизнь достижений, важных уроков и добрых поступков, а впереди — ещё много новых счастливых страниц.",
+        "Желаю вам крепкого здоровья, сил и бодрости, благополучия и заслуженного спокойствия. Пусть мечты не теряют яркости, а каждый новый день приносит радость.",
+        "Пусть семья всегда будет твоей опорой, дом — местом тепла, а сердце — полным любви. Спасибо за всё, что вы для нас делаешь. С юбилеем!"
+    ],
+    51: [
+        "Сегодня вам исполняется 51 год, и я хочу сказать самое главное — как сильно я вас ценю и люблю. Ты для меня не просто отец, а настоящий пример силы, мудрости и доброты.",
+        "Спасибо вам за то, что всегда был рядом, поддерживал меня в трудные моменты и радовался моим успехам. Благодаря вам я знаю, что значит быть настоящим человеком — честным, ответственным и заботливым.",
+        "Я горжусь вами и хочу, чтобы вы всегда чувствовали мою благодарность и уважение. Пусть этот день принесёт вам радость, тепло и улыбки, а впереди будет ещё много счастливых лет, наполненных здоровьем, спокойствием и любовью.",
+        "С Днём рождения, папа! Ты лучший."
+    ]
 };
 
-const languageButtons = document.querySelectorAll("[data-language]");
-const translatableElements = document.querySelectorAll("[data-i18n]");
-const languageLabel = document.querySelector("[data-i18n-aria-label='languageLabel']");
+const homeView = document.querySelector("#home");
+const ageListView = document.querySelector("#ages");
+const ageView = document.querySelector("#age-page");
+const ageList = document.querySelector(".age-list");
+const ageTitle = document.querySelector("#age-title");
+const ageMessage = document.querySelector("#age-message");
 
-function setLanguage(language) {
-    const dictionary = translations[language];
+for (let age = 37; age <= 51; age += 1) {
+    const link = document.createElement("a");
+    link.className = "age-link";
+    link.href = `#age-${age}`;
+    link.textContent = String(age);
+    const lastTwoDigits = age % 100;
+    const lastDigit = age % 10;
+    const yearWord = lastTwoDigits >= 11 && lastTwoDigits <= 14
+        ? "лет"
+        : lastDigit === 1
+            ? "год"
+            : lastDigit >= 2 && lastDigit <= 4
+                ? "года"
+                : "лет";
+    link.setAttribute("aria-label", `Поздравление на ${age} ${yearWord}`);
+    ageList.append(link);
+}
 
-    if (!dictionary) {
-        return;
-    }
+function showPage() {
+    const match = window.location.hash.match(/^#age-(\d{2})$/);
+    const selectedAge = match ? Number(match[1]) : null;
+    const showAgeList = window.location.hash === "#ages";
 
-    translatableElements.forEach((element) => {
-        const key = element.dataset.i18n;
-        const translation = dictionary[key];
+    homeView.hidden = selectedAge !== null || showAgeList;
+    ageListView.hidden = !showAgeList;
+    ageView.hidden = selectedAge === null;
 
-        if (translation === undefined) {
-            throw new Error(`Missing "${key}" translation for "${language}".`);
+    if (selectedAge !== null) {
+        const paragraphs = greetings[selectedAge];
+
+        if (!paragraphs) {
+            window.location.hash = "ages";
+            return;
         }
 
-        element.textContent = translation;
-    });
+        ageTitle.textContent = `Дорогой папа! С ${selectedAge}-летием!`;
+        ageMessage.replaceChildren(...paragraphs.map((text, index) => {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = text;
 
-    document.documentElement.lang = language;
+            if (index === paragraphs.length - 1) {
+                paragraph.classList.add("closing");
+            }
 
-    if (languageLabel) {
-        languageLabel.setAttribute("aria-label", dictionary.languageLabel);
+            return paragraph;
+        }));
     }
-
-    languageButtons.forEach((button) => {
-        const isActive = button.dataset.language === language;
-        button.classList.toggle("is-active", isActive);
-        button.setAttribute("aria-pressed", String(isActive));
-    });
 }
 
-languageButtons.forEach((button) => {
-    button.addEventListener("click", () => setLanguage(button.dataset.language));
+document.querySelectorAll("[data-open-ages]").forEach((button) => {
+    button.addEventListener("click", () => {
+        window.location.hash = "ages";
+    });
 });
 
-setLanguage("ru");
-
-const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-if (!prefersReducedMotion && "IntersectionObserver" in window) {
-    const revealElements = document.querySelectorAll(
-        ".section, .quality-card, .quote, .gratitude"
-    );
-
-    document.body.classList.add("motion-ready");
-
-    const observer = new IntersectionObserver((entries, currentObserver) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                currentObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px"
+document.querySelectorAll("[data-go-home]").forEach((button) => {
+    button.addEventListener("click", () => {
+        window.location.hash = "";
     });
+});
 
-    revealElements.forEach((element) => {
-        element.classList.add("reveal");
-        observer.observe(element);
-    });
-}
+window.addEventListener("hashchange", showPage);
+showPage();

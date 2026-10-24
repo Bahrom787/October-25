@@ -3,132 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">С Днём Рождения, Папа</title>
+    <meta name="theme-color" content="#1c2939">
+    <title>С Днём рождения, папа!</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-
     <header class="hero">
-        <nav class="language-switch" aria-label="Выбор языка" data-i18n-aria-label="languageLabel">
-            <button class="language-button is-active" type="button" data-language="ru" aria-pressed="true">RU</button>
-            <button class="language-button" type="button" data-language="en" aria-pressed="false">EN</button>
-            <button class="language-button" type="button" data-language="uz" aria-pressed="false">UZ</button>
-        </nav>
-        <h1 data-i18n="greeting">С Днём Рождения</h1>
-        <div class="age">51</div>
-        <h1 class="hero-name" data-i18n="name">Папа</h1>
-        <p data-i18n="tagline">Человеку, чья сила, мудрость и достоинство закалены годами испытаний</p>
+        <p class="eyebrow">Самому дорогому человеку</p>
+        <h1>С Днём рождения, папа!</h1>
+        <a class="hero-age" href="#ages" aria-label="Выбрать возраст поздравления">51</a>
+        <p class="hero-note">Нажмите на число — выберем, с какого года начать поздравления</p>
     </header>
 
-    <section class="section">
-        <h2 data-i18n="introTitle">Уважаемый Папа</h2>
-        <div class="main-text">
-            <p data-i18n="introFirst">
-                Пятьдесят один год — это огромная цифра показываящая, сколько всего вы пережили, каких высот достигли и сколько мудрости накопили.
-                В этот день я хочу поздравить вас с Днем рождения и выразить свою благодарность за всё,
-                что вы сделали для нашей семьи.  
-            </p>
-            <p data-i18n="introSecond">
-                Вы — человек, который знает цену тишине не потому, что вам нечего сказать, 
-                а потому что вы понимаете: настоящие слова приходят после долгих раздумий. 
-                Ваше спокойствие — это не слабость, это мудрость человека, который видел многое 
-                и научился ценить то, что действительно важно.
-            </p>
-        </div>
-    </section>
+    <main>
+        <section class="greeting-card home-view" id="home" aria-labelledby="home-title">
+            <p class="card-kicker">От всего сердца</p>
+            <h2 id="home-title">Дорогой папа!</h2>
+            <div class="message">
+                <p>Сегодня вам исполняется 51 год, и я хочу сказать самое главное — как сильно я вас ценю и люблю. Вы для меня не просто отец, а настоящий пример силы, мудрости и доброты.</p>
+                <p>Спасибо вам за то, что всегда был рядом, поддерживал меня в трудные моменты и радовался моим успехам. Благодаря вам я знаю, что значит быть настоящим человеком — честным, ответственным и заботливым.</p>
+                <p>Я горжусь вами и хочу, чтобы вы всегда чувствовали мою благодарность и уважение. Пусть этот день принесёт вам радость, тепло и улыбки, а впереди будет ещё много счастливых лет, наполненных здоровьем, спокойствием и любовью.</p>
+                <p class="closing">С Днём рождения, папа! Ты лучший.</p>
+            </div>
+            <button class="primary-button" type="button" data-open-ages>Выбрать другой год</button>
+        </section>
 
-    <section class="section section--muted">
-        <h2 data-i18n="qualitiesTitle">Ваши качества, которыми я восхищаюсь</h2>
-        <div class="qualities">
-            <div class="quality-card">
-                <h3 data-i18n="qualityOneTitle">Стойкость</h3>
-                <p data-i18n="qualityOneText">
-                    Жизнь не была к вам щедра, но вы не сломались. Вы научились принимать удары 
-                    и продолжать идти вперёд. Это качество передаётся тем, кто рядом с вами.
-                </p>
-            </div>
-            <div class="quality-card">
-                <h3 data-i18n="qualityTwoTitle">Достоинство</h3>
-                <p data-i18n="qualityTwoText">
-                    Даже в самые трудные времена вы сохраняли своё достоинство. Вы не искали лёгких путей 
-                    и не жаловались на судьбу — вы просто делали то, что нужно было сделать.
-                </p>
-            </div>
-            <div class="quality-card">
-                <h3 data-i18n="qualityThreeTitle">Мудрость</h3>
-                <p data-i18n="qualityThreeText">
-                    Ваша мудрость — это не книги, это опыт. Каждый год жизни добавлял вам понимания 
-                    того, как устроен мир, и вы делишься этим пониманием с теми, кого любите.
-                </p>
-            </div>
-            <div class="quality-card">
-                <h3 data-i18n="qualityFourTitle">Надёжность</h3>
-                <p data-i18n="qualityFourText">
-                    На вас можно положиться. Вы — тот, кто не подведёт, кто будет рядом, когда это 
-                    действительно нужно. Ваша надёжность — это фундамент, на котором держится семья.
-                </p>
-            </div>
-        </div>
-    </section>
+        <section class="greeting-card age-list-view" id="ages" aria-labelledby="ages-title" hidden>
+            <button class="close-button" type="button" data-go-home aria-label="Закрыть окно" title="Закрыть">×</button>
+            <p class="card-kicker">Для каждого года — свои тёплые слова</p>
+            <h2 id="ages-title">Выбери возраст</h2>
+            <p class="list-intro">Каждое число откроет отдельное поздравление и пожелание.</p>
+            <nav class="age-list" aria-label="Поздравления по возрасту"></nav>
+            <button class="text-button" type="button" data-go-home>Вернуться к поздравлению на 51 год</button>
+        </section>
 
-    <section class="section">
-        <h2 data-i18n="aboutTitle">О вас</h2>
-        <div class="main-text">
-            <p data-i18n="aboutFirst">
-                Вы интересуетесь автомобилями — и это не случайно. Машины — это механизм,
-                который требует понимания, терпения и уважения к инженерной мысли.
-                Вы цените вещи, которые сделаны качественно и служат долго, потому что сами
-                стремитесь быть таким же.
-            </p>
-            <p data-i18n="aboutSecond">
-                Вы любите тишину — и это не уход от мира. Это способность быть наедине с собой,
-                думать, анализировать, находить ответы внутри. В мире, где все кричат,
-                вы выбрали путь спокойствия, и это делает вас сильнее.
-            </p>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="quote">
-            <span data-i18n="quoteText">«Настоящая сила человека измеряется не тем, сколько раз он упал,
-            а тем, сколько раз он встал и продолжил идти. Вы — пример того,
-            как можно пройти через трудности и остаться человеком с достоинством.»</span>
-            <div class="quote-author" data-i18n="quoteAuthor">— С глубоким уважением</div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="gratitude">
-            <h2 data-i18n="gratitudeTitle">Благодарность</h2>
-            <div class="gratitude-text">
-                <p data-i18n="gratitudeFirst">
-                    Дорогой отец, я хочу выразить вам своё глубокое уважение и благодарность. 
-                    Вы прошли через многое, и каждый ваш шаг был уроком для меня.
-                </p>
-                <p data-i18n="gratitudeSecond">
-                    Спасибо за то, что вы есть. За вашу стойкость, которая учит меня не сдаваться. 
-                    За ваше достоинство, которое показывает, как нужно держать голову высоко 
-                    даже в трудные времена. За вашу мудрость, которой вы делишься не словами, 
-                    а своим примером.
-                </p>
-                <p data-i18n="gratitudeThird">
-                    Вы — человек, которого я уважаю и которым горжусь. 
-                    Пусть этот новый год жизни принесёт вам то спокойствие и удовлетворение, 
-                    которых вы заслуживаете.
-                </p>
+        <section class="greeting-card age-view" id="age-page" aria-labelledby="age-title" hidden>
+            <button class="close-button" type="button" data-go-home aria-label="Закрыть окно" title="Закрыть">×</button>
+            <p class="card-kicker">Тёплые слова для папы</p>
+            <h2 id="age-title"></h2>
+            <div class="message" id="age-message"></div>
+            <div class="page-actions">
+                <button class="primary-button" type="button" data-open-ages>Выбрать другой год</button>
+                <button class="text-button" type="button" data-go-home>К поздравлению на 51 год</button>
             </div>
-            <div class="signature">
-                <span data-i18n="signature">С уважением и благодарностью,</span><br>
-                <span data-i18n="sonName">Ваш сын Бахром</span>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
-        <p data-i18n="footerMessage">Сделано с глубоким уважением от всей семьи</p>
-        <p data-i18n="footerDate">Октябрь 2026</p>
+        <p>С любовью и благодарностью</p>
+        <p>Твой сын Бахром</p>
     </footer>
-
-    <script src="index.js" defer></script>
 </body>
 </html>
