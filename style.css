@@ -112,7 +112,7 @@ button:focus-visible,
 
 .hero-note {
     max-width: 34rem;
-    margin: 4px 0 0;
+    margin: 4px auto 0;
     color: rgba(255, 255, 255, 0.76);
     font-size: clamp(0.9rem, 2.3vw, 1rem);
     text-wrap: balance;
